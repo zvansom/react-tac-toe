@@ -9,12 +9,10 @@ export default class Game extends Component {
     p1Active: true,
   }
 
-  handleClick = event => (
-    this.setState({
-      p1Active: !this.state.p1Active
-    })
-  );
-
+  handleClick = event => {
+    console.log(event.target.value);
+    this.setState({ p1Active: !this.state.p1Active})
+  };
   render() {
     return (
       <div className="App">
