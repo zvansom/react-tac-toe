@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import checkForWin from './checkForWin';
+
 // Components
 import MessageCenter from './MessageCenter';
 import Board from './Board';
@@ -42,7 +44,7 @@ export default class Game extends Component {
       p1Active: true,
       movesLeft: 9, 
     })
-  }
+  };
 
   handleClick = event => {
     const board = this.state.board;
@@ -53,6 +55,9 @@ export default class Game extends Component {
       p1Active: !this.state.p1Active,
       movesLeft: this.state.movesLeft - 1,
     });
+    if (checkForWin(board)) {
+      console.log('WIN!')
+    }
   };
 
   render() {
