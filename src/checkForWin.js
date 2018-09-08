@@ -17,6 +17,7 @@ const checkForWin = board => {
       && board[a].owner === board[c].owner) {
         return true;
     }
+    return false;
   });
 }
 

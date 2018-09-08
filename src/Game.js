@@ -22,10 +22,11 @@ export default class Game extends Component {
     ],
     p1Active: true,
     movesLeft: 9,
+    win: false,
     scores: {
       player1: 0,
       player2: 0,
-    }
+    },
   }
 
   handleReset = () => {
@@ -42,7 +43,8 @@ export default class Game extends Component {
         {value: 8, owner: '',}
       ],
       p1Active: true,
-      movesLeft: 9, 
+      movesLeft: 9,
+      win: false,
     })
   };
 
@@ -56,7 +58,14 @@ export default class Game extends Component {
       movesLeft: this.state.movesLeft - 1,
     });
     if (checkForWin(board)) {
-      console.log('WIN!')
+      let scores = this.state.scores;
+      this.state.p1Active ? scores.player1 += 1 : scores.player2 += 1;
+      
+      this.setState({
+        scores,
+        win: true,
+        movesLeft: 0,
+      })
     }
   };
 
