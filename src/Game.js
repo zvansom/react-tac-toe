@@ -19,27 +19,29 @@ export default class Game extends Component {
       {value: 8, owner: '',}
     ],
     p1Active: true,
+    movesLeft: 9,
   }
 
   handleClick = event => {
     const board = this.state.board;
-    // If p1Active display X marker else display O marker
+    // If p1Active, set marker to X else set marker to O
     board[event.target.value].owner = this.state.p1Active ? 'X' : 'O'; 
     this.setState({ 
       board,
       p1Active: !this.state.p1Active,
-      movesRemaining: this.state.movesRemaining - 1,
+      movesLeft: this.state.movesLeft - 1,
     });
   };
 
   render() {
-    const { board, p1Active } = this.state;
+    const { board, p1Active, movesLeft } = this.state;
+
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Welcome to React-Tac-Toe</h1>
         </header>
-        <MessageCenter turn={p1Active} />
+        <MessageCenter turn={p1Active} movesLeft={movesLeft} />
         <Board cells={board} handleClick={this.handleClick} />
       </div>
     );

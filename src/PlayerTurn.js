@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Display = props => (
+const PlayerTurn = props => (
   <div className="Display">
     {props.turn ? (
       <h2>Player 1's Turn!</h2>
@@ -10,4 +10,4 @@ const Display = props => (
   </div>
 )
 
-export default Display;
+export default PlayerTurn;
