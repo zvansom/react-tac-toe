@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
 // Import Components
-import Player from './Player';
+import PlayerScore from './PlayerScore';
 import PlayerTurn from './PlayerTurn';
 import GameOver from './GameOver';
 
 export default class MessageCenter extends Component { 
   render() {
-    const { turn, movesLeft, handleReset } = this.props;
+    const { turn, movesLeft, handleReset, scores } = this.props;
     let display;
 
     if ( !movesLeft ) { display = <GameOver handleReset={handleReset} /> } 
@@ -15,9 +15,9 @@ export default class MessageCenter extends Component {
 
     return (
       <div className="Message">
-        <Player />
+        <PlayerScore name="P1" score={scores.player1} />
         {display}
-        <Player />
+        <PlayerScore name="P2" score={scores.player2} />
       </div>
     )
   }

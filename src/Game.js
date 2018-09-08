@@ -20,6 +20,10 @@ export default class Game extends Component {
     ],
     p1Active: true,
     movesLeft: 9,
+    scores: {
+      player1: 0,
+      player2: 0,
+    }
   }
 
   handleReset = () => {
@@ -52,7 +56,7 @@ export default class Game extends Component {
   };
 
   render() {
-    const { board, p1Active, movesLeft } = this.state;
+    const { board, p1Active, movesLeft, scores } = this.state;
 
     return (
       <div className="App">
@@ -63,6 +67,7 @@ export default class Game extends Component {
           turn={p1Active} 
           movesLeft={movesLeft} 
           handleReset={this.handleReset}
+          scores={scores}
         />
         <Board 
           cells={board} 
