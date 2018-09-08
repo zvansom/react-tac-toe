@@ -50,7 +50,6 @@ export default class Game extends Component {
 
   handleClick = event => {
     const board = this.state.board;
-    // If p1Active, set marker to X else set marker to O
     board[event.target.value].owner = this.state.p1Active ? 'X' : 'O'; 
     this.setState({ 
       board,
@@ -58,9 +57,8 @@ export default class Game extends Component {
       movesLeft: this.state.movesLeft - 1,
     });
     if (checkForWin(board)) {
-      let scores = this.state.scores;
-      this.state.p1Active ? scores.player1 += 1 : scores.player2 += 1;
-      
+      let { scores, p1Active } = this.state;
+      p1Active ? scores.player1 += 1 : scores.player2 += 1;
       this.setState({
         scores,
         win: true,
@@ -70,7 +68,6 @@ export default class Game extends Component {
 
   render() {
     const { board, p1Active, movesLeft, scores, win } = this.state;
-
     return (
       <div className="App">
         <header className="App-header">
