@@ -1,9 +1,10 @@
 import React from 'react'
+import Reset from './Reset'
 
-const GameOver = () => (
+const GameOver = props => (
   <div className="Display">
     <h2>No Moves Left!</h2>
-    <button className="reset">Play again!</button>
+    <Reset handleReset={props.handleReset} />
   </div>
 )
 
