@@ -7,10 +7,13 @@ import GameOver from './GameOver';
 
 export default class MessageCenter extends Component { 
   render() {
-    const { turn, movesLeft, handleReset, scores } = this.props;
+    const { turn, movesLeft, handleReset, scores, win } = this.props;
     let display;
 
-    if ( !movesLeft ) { display = <GameOver handleReset={handleReset} /> } 
+    if (win) { 
+      const winner = !turn ? 'Player 1' : 'Player 2'
+      display = <GameOver message={`${winner} wins!`} handleReset={handleReset} /> 
+    } else if ( !movesLeft ) { display = <GameOver message="No Moves Left!" handleReset={handleReset} /> } 
     else { display = <PlayerTurn turn={turn} /> }
 
     return (

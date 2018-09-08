@@ -64,13 +64,12 @@ export default class Game extends Component {
       this.setState({
         scores,
         win: true,
-        movesLeft: 0,
       })
     }
   };
 
   render() {
-    const { board, p1Active, movesLeft, scores } = this.state;
+    const { board, p1Active, movesLeft, scores, win } = this.state;
 
     return (
       <div className="App">
@@ -82,6 +81,7 @@ export default class Game extends Component {
           movesLeft={movesLeft} 
           handleReset={this.handleReset}
           scores={scores}
+          win={win}
         />
         <Board 
           cells={board} 
