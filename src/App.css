@@ -1,3 +1,8 @@
+:root {
+  --green: #bada55;
+  --black: #272727;
+}
+
 .App {
   text-align: center;
   display: grid;
@@ -6,7 +11,7 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: var(--black);
   height: 30px;
   justify-self: stretch;
   padding: 20px;
@@ -22,28 +27,30 @@
   grid-template-columns: 1fr 3fr 1fr;
   width: 700px;
   height: 130px;
-  background: #bada55;
+  background: var(--green);
 }
 
 .Board {
-  background: #bada55;
+  background: var(--black);;
   margin: 0 auto;
   width: 450px;
   height: 450px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  justify-items: stretch;
-  align-items: stretch;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 5px;
 }
 
 .Cell {
-  background: black;
   display: grid;
   justify-items: stretch;
   align-items: stretch;
 }
 
-.Cell:nth-of-type(1){
-  background: white;
+.Marker-X {
+  background: red;
+}
+
+.Marker-O {
+  background: blue;
 }
