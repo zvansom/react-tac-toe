@@ -8,7 +8,7 @@ const Cell = props => (
         onClick={props.handleClick}
         owner={props.owner}></button>
     ) : (
-      <div className={`Marker-${props.owner}`}></div>
+      <div className={`Marker-${props.owner}`}>{props.owner}</div>
     )}
   </div>
 )
