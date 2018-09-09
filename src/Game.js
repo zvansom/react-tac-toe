@@ -7,21 +7,19 @@ import checkForWin from './checkForWin';
 import MessageCenter from './MessageCenter';
 import Board from './Board';
 
-const initialBoard =  [
-    {value: 0, owner: '',},
-    {value: 1, owner: '',}, 
-    {value: 2, owner: '',},
-    {value: 3, owner: '',},
-    {value: 4, owner: '',},
-    {value: 5, owner: '',},
-    {value: 6, owner: '',},
-    {value: 7, owner: '',},
-    {value: 8, owner: '',}
-  ]
-
 export default class Game extends Component {
   state = {
-    board: initialBoard,
+    board: [
+      {value: 0, owner: '',},
+      {value: 1, owner: '',}, 
+      {value: 2, owner: '',},
+      {value: 3, owner: '',},
+      {value: 4, owner: '',},
+      {value: 5, owner: '',},
+      {value: 6, owner: '',},
+      {value: 7, owner: '',},
+      {value: 8, owner: '',}
+    ],
     p1Active: true,
     movesLeft: 9,
     win: false,
@@ -33,11 +31,22 @@ export default class Game extends Component {
 
   handleReset = () => {
     this.setState({
-      board: initialBoard,
+      board: [
+        {value: 0, owner: '',},
+        {value: 1, owner: '',}, 
+        {value: 2, owner: '',},
+        {value: 3, owner: '',},
+        {value: 4, owner: '',},
+        {value: 5, owner: '',},
+        {value: 6, owner: '',},
+        {value: 7, owner: '',},
+        {value: 8, owner: '',}
+      ],
       p1Active: true,
       movesLeft: 9,
       win: false,
     })
+    console.log(this.state.board)
   };
 
   handleClick = event => {
