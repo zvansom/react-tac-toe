@@ -46,7 +46,6 @@ export default class Game extends Component {
       movesLeft: 9,
       win: false,
     })
-    console.log(this.state.board)
   };
 
   handleClick = event => {
