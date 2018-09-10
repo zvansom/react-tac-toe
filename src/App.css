@@ -116,7 +116,7 @@ h2 {
 .button {
   z-index: 2;
   opacity: 0;
-  animation: moveUp 300ms 1s ease-out forwards;
+  animation: moveUp 300ms 750ms ease-out forwards;
 }
 
 @keyframes moveUp {
