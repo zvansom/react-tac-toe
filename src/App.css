@@ -20,8 +20,13 @@ h2 {
 .Display {
   letter-spacing: 4.5px;
   display: grid;
-  grid-template-rows: 2fr, 1fr;
   font-size: 1.3em;
+}
+
+.Display > h2 {
+  margin: 0;
+  margin-top: 20px;
+  padding: 0;
 }
 
 .title {
@@ -59,7 +64,7 @@ h2 {
 }
 
 .Message {
-  background: linear-gradient(72deg, #d85b45, #ddd, #5f90da);
+  background: linear-gradient(72deg, var(--red), #ddd, var(--blue));
   border-radius: 15px;
   box-shadow: 0 1em 1.3em -0.3em rgba(75, 75, 75, 0.5);
   color: var(--black);
@@ -108,6 +113,18 @@ h2 {
   background: #ccc;
 }
 
+.button {
+  z-index: 2;
+  opacity: 0;
+  animation: moveUp 300ms 1s ease-out forwards;
+}
+
+@keyframes moveUp {
+  0%{ transform: translateY(100px); opacity: 0;}
+  90%{ transform: translateY(-15px);}
+  100%{transform: translateY(0px); opacity: 1;}
+}
+
 .Marker-X {
   background: var(--red);
   animation: slideFromLeft 300ms ease-out forwards;
@@ -121,10 +138,14 @@ h2 {
 }
 
 .button {
-  font-size: 1.5em;
   border-radius: 5px;
-  padding: 5px 50px;
+  padding: 5px 1fr;
+  font-size: 1.2em;
+  align-self: flex-start;
   border: 1px solid var(--black);
+  display: inline;
+  background: var(--white);
+  box-shadow: 0 0.3em 1em rgba(0,0,0,0.6)
 }
 
 @keyframes slideFromLeft {
