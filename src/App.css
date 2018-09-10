@@ -1,9 +1,9 @@
 :root {
   --black: #272727;
-  --white: #fdfdfd;
+  --blue: #558ada;
   --green: #bada55;
   --red: #da6955;
-  --blue: #558ada;
+  --white: #fdfdfd;
 }
 
 html {
@@ -13,14 +13,14 @@ html {
 
 h2 {
   font-family: 'Oswald', sans-serif;
-  text-transform: uppercase;
   line-height: 0.95em;
+  text-transform: uppercase;
 }
 
 .Display {
-  letter-spacing: 4.5px;
   display: grid;
   font-size: 1.3em;
+  letter-spacing: 4.5px;
 }
 
 .Display > h2 {
@@ -35,13 +35,13 @@ h2 {
 
 .score {
   border: var(--black) 1px solid;
-  display: inline;
-  padding: 5px 20px;
   border-radius: 3px;
-  font-family: 'Finger Paint', cursive;
   box-shadow: 0 0.4em 1.1em 0 rgba(58, 58, 58, 0.5);
-  font-size: 1.6em;
   color: var(--white);
+  display: inline;
+  font-family: 'Finger Paint', cursive;
+  font-size: 1.6em;
+  padding: 5px 20px;
 }
 
 .P1 {
@@ -53,14 +53,14 @@ h2 {
 }
 
 .App {
+  background: linear-gradient(to right, #beb1b1, #ccc, #bcc4cf);
   display: grid;
   gap: 1.3em;
+  height: 100vh;
   justify-items: center;
+  margin: 0 auto;
   text-align: center;
   width: 80%;
-  background: linear-gradient(to right, #beb1b1, #ccc, #bcc4cf);
-  margin: 0 auto;
-  height: 100vh;
 }
 
 .Message {
@@ -90,10 +90,10 @@ h2 {
 
 @media (max-width: 650px) {
   .Board {
-    width: 300px;
     height: 300px;
     margin: 0 auto;
     transform: scale(0.9);
+    width: 300px;
   }
 
   .Message {
@@ -102,11 +102,11 @@ h2 {
 }
 
 .Cell {
-  display: grid;
-  justify-items: stretch;
   align-items: stretch;
+  display: grid;
   font-family: 'Finger Paint', cursive;
   font-size: 6em;
+  justify-items: stretch;
 }
 
 .Cell>button:hover {
@@ -114,9 +114,9 @@ h2 {
 }
 
 .button {
-  z-index: 2;
-  opacity: 0;
   animation: moveUp 300ms 750ms ease-out forwards;
+  opacity: 0;
+  z-index: 2;
 }
 
 @keyframes moveUp {
@@ -126,26 +126,26 @@ h2 {
 }
 
 .Marker-X {
-  background: var(--red);
   animation: slideFromLeft 300ms ease-out forwards;
+  background: var(--red);
   transform-origin: left;
 }
 
 .Marker-O {
-  background: var(--blue);
   animation: slideFromRight 300ms ease-out forwards;
+  background: var(--blue);
   transform-origin: right;
 }
 
 .button {
-  border-radius: 5px;
-  padding: 5px 1fr;
-  font-size: 1.2em;
   align-self: flex-start;
-  border: 1px solid var(--black);
-  display: inline;
   background: var(--white);
-  box-shadow: 0 0.3em 1em rgba(0,0,0,0.6)
+  border: 1px solid var(--black);
+  border-radius: 5px;
+  box-shadow: 0 0.3em 1em rgba(0,0,0,0.6);
+  display: inline;
+  font-size: 1.2em;
+  padding: 5px 1fr;
 }
 
 @keyframes slideFromLeft {
